@@ -5,7 +5,7 @@ metadata:
   generateName: upgrade-sql-schema-1
   annotations:
     argocd.argoproj.io/hook: PreSync
-    argocd.argoproj.io/sync wave annotation: "0"
+    argocd.argoproj.io/sync-wave: "0"
 spec:
   template:
     spec:
@@ -21,7 +21,7 @@ metadata:
   generateName: upgrade-sql-schema-2
   annotations:
     argocd.argoproj.io/hook: PreSync
-    argocd.argoproj.io/sync wave annotation: "1"
+    argocd.argoproj.io/sync-wave: "1"
 spec:
   template:
     spec:
@@ -37,7 +37,7 @@ metadata:
   name: backend
   annotations:
     argocd.argoproj.io/hook: Sync
-    argocd.argoproj.io/sync wave annotation: "0"
+    argocd.argoproj.io/sync-wave: "0"
 spec:
   replicas: 1
   selector:
@@ -58,7 +58,7 @@ metadata:
   name: backend
   annotations:
     argocd.argoproj.io/hook: Sync
-    argocd.argoproj.io/sync wave annotation: "0"
+    argocd.argoproj.io/sync-wave: "0"
 spec:
   selector:
     tier: backend
@@ -73,7 +73,7 @@ metadata:
   name: maint-page-up
   annotations:
     argocd.argoproj.io/hook: Sync
-    argocd.argoproj.io/sync wave annotation: "1"
+    argocd.argoproj.io/sync-wave: "1"
 spec:
   template:
     spec:
@@ -90,7 +90,7 @@ metadata:
   name: frontend
   annotations:
     argocd.argoproj.io/hook: Sync
-    argocd.argoproj.io/sync wave annotation: "2"
+    argocd.argoproj.io/sync-wave: "2"
 spec:
   replicas: 1
   selector:
@@ -111,7 +111,7 @@ metadata:
   name: frontend
   annotations:
     argocd.argoproj.io/hook: Sync
-    argocd.argoproj.io/sync wave annotation: "2"
+    argocd.argoproj.io/sync-wave: "2"
 spec:
   selector:
     tier: frontend
@@ -126,7 +126,7 @@ metadata:
   name: maint-page-down
   annotations:
     argocd.argoproj.io/hook: Sync
-    argocd.argoproj.io/sync wave annotation: "3"
+    argocd.argoproj.io/sync-wave: "3"
 spec:
   template:
     spec:
